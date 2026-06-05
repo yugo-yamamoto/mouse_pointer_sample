@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Glove Cursor",
+  "version": "1.0",
+  "description": "Replace mouse cursor with glove pointer",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Glove Cursor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["cursor.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
